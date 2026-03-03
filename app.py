@@ -42,7 +42,49 @@ st.markdown("""
 .block-container {padding-top: 1rem; max-width: 1100px;}
 [data-testid="stNumberInput"] input,
 [data-testid="stMetricValue"] {font-family: 'JetBrains Mono', monospace !important;}
+
+/* Make the native sidebar toggle bigger and visible */
+button[data-testid="stBaseButton-headerNoPadding"] {
+    background: #1869b8 !important;
+    color: white !important;
+    border-radius: 8px !important;
+    width: 40px !important;
+    height: 40px !important;
+    position: fixed !important;
+    top: 12px !important;
+    left: 12px !important;
+    z-index: 999999 !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
+}
+button[data-testid="stBaseButton-headerNoPadding"] svg {
+    width: 22px !important;
+    height: 22px !important;
+    stroke: white !important;
+}
 </style>
+""", unsafe_allow_html=True)
+
+# ─── Sidebar toggle hint (visible when sidebar is closed) ───
+st.markdown("""
+<div id="sidebar-hint" style="position:fixed; top:14px; left:60px; z-index:999998;
+     background:#1869b8; color:white; font-size:0.75rem; font-weight:600;
+     padding:6px 14px; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.12);
+     pointer-events:none; opacity:0.9;">
+    ← Adjust Inputs
+</div>
+<script>
+    // Hide hint when sidebar is open
+    const observer = new MutationObserver(() => {
+        const sidebar = document.querySelector('[data-testid="stSidebar"]');
+        const hint = document.getElementById('sidebar-hint');
+        if (sidebar && hint) {
+            const collapsed = sidebar.getAttribute('aria-expanded') === 'false'
+                || sidebar.classList.contains('st-emotion-cache-1gwvy71');
+            hint.style.display = collapsed ? 'block' : 'none';
+        }
+    });
+    observer.observe(document.body, {attributes: true, subtree: true, attributeFilter: ['aria-expanded', 'class']});
+</script>
 """, unsafe_allow_html=True)
 
 # ─── Logos + Title ───
