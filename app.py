@@ -38,7 +38,7 @@ if not check_password():
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap');
-#MainMenu, footer, header {visibility: hidden;}
+#MainMenu, footer {visibility: hidden;}
 .block-container {padding-top: 1rem; max-width: 1100px;}
 [data-testid="stNumberInput"] input,
 [data-testid="stMetricValue"] {font-family: 'JetBrains Mono', monospace !important;}
