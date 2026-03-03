@@ -124,6 +124,127 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
+# ─── Value Map ───
+st.markdown("""
+<style>
+.vmap {margin:16px 0 8px 0; font-size:0.85rem;}
+.vmap-tier {margin-bottom:2px;}
+.vmap-tier-label {
+    font-size:0.65rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
+    color:#888; margin-bottom:6px; padding-left:4px;
+}
+.vmap-row {display:flex; gap:10px; margin-bottom:10px; flex-wrap:wrap;}
+.vmap-card {
+    flex:1; min-width:140px; border-radius:8px; padding:10px 14px;
+    border:1px solid #e0e4ea; background:#fff;
+}
+.vmap-card-blue {border-left:3px solid #1869b8; background:#f8faff;}
+.vmap-card-green {border-left:3px solid #1a8c3f; background:#f6fdf8;}
+.vmap-card-amber {border-left:3px solid #c77d00; background:#fffcf5;}
+.vmap-card .title {font-weight:700; font-size:0.82rem; color:#2d2d2d; margin-bottom:2px;}
+.vmap-card .detail {font-size:0.73rem; color:#666; line-height:1.5;}
+.vmap-card .metric {font-family:'JetBrains Mono',monospace; font-weight:700; font-size:0.73rem; color:#1869b8;}
+.vmap-card .metric-green {font-family:'JetBrains Mono',monospace; font-weight:700; font-size:0.73rem; color:#1a8c3f;}
+.vmap-connector {
+    display:flex; justify-content:center; margin:2px 0 6px 0;
+    color:#bbb; font-size:0.9rem; letter-spacing:8px;
+}
+.vmap-tag {
+    display:inline-block; font-size:0.6rem; font-weight:600; padding:1px 6px;
+    border-radius:3px; margin-top:4px;
+}
+.vmap-tag-blue {background:#e8f0fe; color:#1869b8;}
+.vmap-tag-green {background:#e6f7ed; color:#1a8c3f;}
+</style>
+
+<div class="vmap">
+
+    <div class="vmap-tier">
+        <div class="vmap-tier-label">DG Strategic Objectives &nbsp;(FY2024 10-K / Earnings)</div>
+        <div class="vmap-row">
+            <div class="vmap-card vmap-card-blue">
+                <div class="title">Driving Profitable Sales Growth</div>
+                <div class="detail">Protect perishable revenue, reduce spoilage losses, improve DG Fresh availability</div>
+                <div class="metric">Target: 2–3% same-store comp</div>
+            </div>
+            <div class="vmap-card vmap-card-blue">
+                <div class="title">Low-Cost Operator / Save to Serve</div>
+                <div class="detail">Reduce fleet operating costs, eliminate manual labor waste, lower SG&A burden</div>
+                <div class="metric">Target: 6–7% operating margin</div>
+            </div>
+            <div class="vmap-card vmap-card-blue">
+                <div class="title">Shrink Reduction</div>
+                <div class="detail">#1 margin tailwind — temperature abuse is invisible shrink in cold chain</div>
+                <div class="metric">90+ bps improvement (Q3 FY25)</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="vmap-connector">▾ &nbsp; ▾ &nbsp; ▾</div>
+
+    <div class="vmap-tier">
+        <div class="vmap-tier-label">DG Operational Priorities &nbsp;(Cold Chain Impact)</div>
+        <div class="vmap-row">
+            <div class="vmap-card vmap-card-amber">
+                <div class="title">DG Fresh Self-Distribution</div>
+                <div class="detail">Perishables to 19,000+ stores via 10 cold DCs. Orbcomm return-air monitoring creates blind spots.</div>
+                <span class="vmap-tag vmap-tag-blue">All 4 drivers</span>
+            </div>
+            <div class="vmap-card vmap-card-amber">
+                <div class="title">OTIF Improvement</div>
+                <div class="detail">#1 supply chain priority. Rejected loads = failed OTIF. +470 bps on-time improvement so far.</div>
+                <span class="vmap-tag vmap-tag-blue">Rejected Loads</span>
+                <span class="vmap-tag vmap-tag-blue">Fuel</span>
+            </div>
+            <div class="vmap-card vmap-card-amber">
+                <div class="title">Private Fleet Efficiency</div>
+                <div class="detail">2,412 tractors, 8,075 trailers. 20% savings vs 3PL. Reefer fuel is a controllable cost.</div>
+                <span class="vmap-tag vmap-tag-blue">Fuel</span>
+                <span class="vmap-tag vmap-tag-blue">Probing</span>
+            </div>
+            <div class="vmap-card vmap-card-amber">
+                <div class="title">FSMA / Food Safety Compliance</div>
+                <div class="detail">FDA Class II recall (July '25). FSMA 204 traceability deadline ahead. Audit-ready records required.</div>
+                <span class="vmap-tag vmap-tag-blue">False Alarms</span>
+                <span class="vmap-tag vmap-tag-blue">Rejected Loads</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="vmap-connector">▾ &nbsp; ▾ &nbsp; ▾</div>
+
+    <div class="vmap-tier">
+        <div class="vmap-tier-label">EROAD CoreTemp Value Drivers &nbsp;(Quantified Below)</div>
+        <div class="vmap-row">
+            <div class="vmap-card vmap-card-green">
+                <div class="title">Fuel Optimization</div>
+                <div class="detail">Smarter pre-cool + op mode = less diesel burn per trailer per day</div>
+                <span class="vmap-tag vmap-tag-green">Save to Serve</span>
+            </div>
+            <div class="vmap-card vmap-card-green">
+                <div class="title">Rejected Load Prevention</div>
+                <div class="detail">Predict excursions before delivery — fix in transit, not at the dock</div>
+                <span class="vmap-tag vmap-tag-green">Shrink</span>
+                <span class="vmap-tag vmap-tag-green">OTIF</span>
+            </div>
+            <div class="vmap-card vmap-card-green">
+                <div class="title">Probing Elimination</div>
+                <div class="detail">CoreTemp replaces handheld thermometers — driver time back to driving</div>
+                <span class="vmap-tag vmap-tag-green">SG&A</span>
+                <span class="vmap-tag vmap-tag-green">Fleet Efficiency</span>
+            </div>
+            <div class="vmap-card vmap-card-green">
+                <div class="title">False Alarm Reduction</div>
+                <div class="detail">Core temp vs return air — FSQA focuses on real risk, not noise</div>
+                <span class="vmap-tag vmap-tag-green">Shrink</span>
+                <span class="vmap-tag vmap-tag-green">Compliance</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+""", unsafe_allow_html=True)
+
 
 # ─── Helpers ───
 def fmt(n):
