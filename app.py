@@ -99,31 +99,33 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.title("Cold Chain ROI Calculator")
-st.caption("EROAD Value Engineering — Discovery Call Tool")
+st.caption("EROAD CoreTemp Value Assessment")
 
-# ─── Discovery Call Guide ───
-st.markdown("<div style='background:#1869b8; color:white; border-radius:8px; padding:18px 22px; margin:12px 0 4px 0;'><strong style='font-size:1rem;'>Discovery Call Guide</strong><span style='float:right; font-size:0.78rem; opacity:0.7;'>Start broad, go narrow. Let them talk.</span></div>", unsafe_allow_html=True)
-
-# Executive context
-st.markdown("<div style='background:#f0f4f8; border-radius:0 0 8px 8px; padding:14px 22px; margin:0 0 6px 0; font-size:0.88rem; line-height:1.7; color:#333;'><strong>Context for this call:</strong> DG is in year two of their Back to Basics turnaround under Todd Vasos. They're chasing a 6-7% operating margin target, and shrink reduction is their #1 margin lever (90+ bps in Q3 FY25). Meanwhile, DG Fresh now self-distributes perishables to 19,000+ stores through 10 cold DCs and ~1,000 reefer trailers — but they're still on Orbcomm return-air-only monitoring. July 2025 FDA Class II temperature recall at DG stores. FSMA 204 deadline ahead.</div>", unsafe_allow_html=True)
-
-# Question flow
-q1, q2 = st.columns(2)
-with q1:
-    st.markdown("<div style='background:#edf3fb; border-left:3px solid #1869b8; border-radius:6px; padding:12px 16px; margin:4px 0; font-size:0.84rem;'><strong style='color:#1869b8;'>1. STRATEGIC (CFO / SVP Supply Chain)</strong><br><em style='color:#555;'>\"Where does cold chain fit in the Back to Basics priorities?\"</em><br><em style='color:#555;'>\"How is DG Fresh tracking against the operating margin framework?\"</em><br><em style='color:#555;'>\"What does shrink look like on the perishable side specifically?\"</em></div>", unsafe_allow_html=True)
-with q2:
-    st.markdown("<div style='background:#edf3fb; border-left:3px solid #1869b8; border-radius:6px; padding:12px 16px; margin:4px 0; font-size:0.84rem;'><strong style='color:#1869b8;'>2. OPERATIONAL (VP Transportation / FSQA)</strong><br><em style='color:#555;'>\"Walk me through what happens when a driver opens the door on a multi-stop route.\"</em><br><em style='color:#555;'>\"How many alerts is your FSQA team processing daily? What % are real?\"</em><br><em style='color:#555;'>\"What does a rejected load cost you end to end?\"</em></div>", unsafe_allow_html=True)
-
-q3, q4 = st.columns(2)
-with q3:
-    st.markdown("<div style='background:#fdf0ee; border-left:3px solid #ee3124; border-radius:6px; padding:12px 16px; margin:4px 0; font-size:0.84rem;'><strong style='color:#ee3124;'>3. PAIN (Uncover the cost of inaction)</strong><br><em style='color:#555;'>\"What happened after the July '25 recall? Did anything change internally?\"</em><br><em style='color:#555;'>\"If Orbcomm shows a spike, how does your team decide if it's real?\"</em><br><em style='color:#555;'>\"Are drivers still probing at every stop? How much time is that?\"</em></div>", unsafe_allow_html=True)
-with q4:
-    st.markdown("<div style='background:#edf7f0; border-left:3px solid #1a8c3f; border-radius:6px; padding:12px 16px; margin:4px 0; font-size:0.84rem;'><strong style='color:#1a8c3f;'>4. VALUE (Bridge to the numbers below)</strong><br><em style='color:#555;'>\"If you could know actual product temp — not air temp — what would that change?\"</em><br><em style='color:#555;'>\"What if you could cut false alarms by 70% and catch every real excursion?\"</em><br><em style='color:#555;'>\"Let me show you what that looks like in dollars...\"</em></div>", unsafe_allow_html=True)
-
-st.markdown("")
+# ─── Value Story ───
+st.markdown("""
+<div style="background:#f0f4f8; border-left:4px solid #1869b8; border-radius:6px; padding:18px 22px; margin:12px 0 16px 0;">
+    <div style="font-weight:700; color:#1869b8; font-size:1.05rem; margin-bottom:8px;">The Dollar General Cold Chain Opportunity</div>
+    <div style="font-size:0.9rem; line-height:1.75; color:#333;">
+        Dollar General self-distributes perishables to <strong>19,000+ stores</strong> through 10 cold storage
+        distribution centers and an estimated <strong>1,000 reefer trailers</strong> as part of the DG Fresh initiative.
+        Current temperature monitoring relies on return-air sensors that spike 15&ndash;20&deg;F on every door open
+        &mdash; even when product temperature remains stable. This creates hundreds of false alerts daily,
+        masks real excursions, drives unnecessary load rejections, and requires manual product probing at every stop.
+        <br><br>
+        EROAD <strong>CoreTemp</strong> predicts actual product core temperature using thermal mass modeling &mdash;
+        monitoring what matters. The result: fewer rejected loads, eliminated manual probing,
+        reduced false alarms, and lower reefer fuel consumption. Four measurable value drivers
+        that directly support DG's stated priorities around <strong>shrink reduction</strong>,
+        <strong>OTIF improvement</strong>, and the <strong>Save to Serve</strong> operating margin framework.
+    </div>
+    <div style="margin-top:10px; font-size:0.8rem; color:#888;">
+        July 2025 FDA Class II temperature recall at Dollar General stores &nbsp;|&nbsp; FSMA 204 traceability deadline ahead
+    </div>
+</div>
+""", unsafe_allow_html=True)
 
 # ─── Value Map ───
-st.markdown("<div style='font-size:0.7rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#1869b8; margin-bottom:4px;'>VALUE MAP: DG OBJECTIVES &rarr; OPERATIONAL PRIORITIES &rarr; EROAD DRIVERS</div>", unsafe_allow_html=True)
+st.markdown("<div style='font-size:0.7rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#555; margin-bottom:4px;'>STRATEGIC ALIGNMENT</div>", unsafe_allow_html=True)
 
 # Tier 1: DG Strategic Objectives — GRAY
 obj1, obj2, obj3 = st.columns(3)
