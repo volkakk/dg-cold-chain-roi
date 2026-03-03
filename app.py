@@ -164,7 +164,7 @@ st.subheader("Value Drivers")
 # 1. Fuel
 c1, c2 = st.columns([3, 1])
 c1.markdown("**Fuel Optimization** — Pre-cool time reduction + operating mode efficiency")
-c2.markdown(f"<div style='text-align:right; font-family:JetBrains Mono,monospace; font-size:1.3rem; font-weight:700; color:#1869b8;'>{fmt(fuel_total)}</div>", unsafe_allow_html=True)
+c2.markdown(f"<div style='text-align:right; font-family:JetBrains Mono,monospace; font-size:1.3rem; font-weight:700; color:#1a8c3f;'>{fmt(fuel_total)}</div>", unsafe_allow_html=True)
 with st.expander("Show calculation"):
     st.markdown(f"""
 **Pre-Cool Savings**
@@ -181,7 +181,7 @@ with st.expander("Show calculation"):
 # 2. Rejected Loads
 c1, c2 = st.columns([3, 1])
 c1.markdown("**Rejected Load Prevention** — CoreTemp product temp prediction reduces rejections")
-c2.markdown(f"<div style='text-align:right; font-family:JetBrains Mono,monospace; font-size:1.3rem; font-weight:700; color:#1869b8;'>{fmt(rej_total)}</div>", unsafe_allow_html=True)
+c2.markdown(f"<div style='text-align:right; font-family:JetBrains Mono,monospace; font-size:1.3rem; font-weight:700; color:#1a8c3f;'>{fmt(rej_total)}</div>", unsafe_allow_html=True)
 with st.expander("Show calculation"):
     st.markdown(f"""
 - `{rej_loads} rejected loads/mo` x `${rej_cost:,}/load` x `{rej_rate}% reduction` x `12 months`
@@ -191,7 +191,7 @@ with st.expander("Show calculation"):
 # 3. Probing
 c1, c2 = st.columns([3, 1])
 c1.markdown("**Manual Probing Elimination** — CoreTemp replaces handheld thermometer probing")
-c2.markdown(f"<div style='text-align:right; font-family:JetBrains Mono,monospace; font-size:1.3rem; font-weight:700; color:#1869b8;'>{fmt(prob_total)}</div>", unsafe_allow_html=True)
+c2.markdown(f"<div style='text-align:right; font-family:JetBrains Mono,monospace; font-size:1.3rem; font-weight:700; color:#1a8c3f;'>{fmt(prob_total)}</div>", unsafe_allow_html=True)
 with st.expander("Show calculation"):
     st.markdown(f"""
 - `{prob_drv:,} drivers` x `{prob_stp} stops/day` x `{prob_min:.1f} min/stop / 60` x `${prob_hr}/hr` x `{prob_days} days` x `{prob_elim}% elimination`
@@ -201,7 +201,7 @@ with st.expander("Show calculation"):
 # 4. False Alarms
 c1, c2 = st.columns([3, 1])
 c1.markdown("**False Alarm Reduction** — CoreTemp vs. Orbcomm return-air-only monitoring")
-c2.markdown(f"<div style='text-align:right; font-family:JetBrains Mono,monospace; font-size:1.3rem; font-weight:700; color:#1869b8;'>{fmt(fa_total)}</div>", unsafe_allow_html=True)
+c2.markdown(f"<div style='text-align:right; font-family:JetBrains Mono,monospace; font-size:1.3rem; font-weight:700; color:#1a8c3f;'>{fmt(fa_total)}</div>", unsafe_allow_html=True)
 with st.expander("Show calculation"):
     st.markdown(f"""
 - `{fa_alerts:,} alerts/day` x `{fa_rate}% false` x `{fa_min:.1f} min/alert / 60` x `${fa_hr}/hr` x `{fa_days} days` x `{fa_red}% reduction`
