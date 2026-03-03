@@ -61,6 +61,47 @@ button[data-testid="stBaseButton-headerNoPadding"] svg {
     height: 22px !important;
     stroke: white !important;
 }
+
+/* EROAD branded alert boxes */
+/* Tier 1 — st.info → EROAD Denim Blue */
+div[data-testid="stAlert"][data-baseweb-type="info"],
+div[role="alert"]:has(> svg[fill="rgba(23, 92, 211"]),
+.stAlert:has(> div > svg) {border-radius: 8px !important;}
+
+div[data-testid="stNotification"][aria-label*="info"],
+div.stAlert > div {border-radius: 8px !important;}
+
+/* Tier 1 blue */
+[data-testid="stNotificationContentInfo"] {
+    background: #edf3fb !important;
+    border-left: 4px solid #1869b8 !important;
+    border-radius: 8px !important;
+}
+[data-testid="stNotificationContentInfo"] p,
+[data-testid="stNotificationContentInfo"] strong {color: #0d3f6e !important;}
+[data-testid="stNotificationContentInfo"] code {background: #d4e3f5 !important; color: #1869b8 !important;}
+[data-testid="stNotificationContentInfo"] svg {fill: #1869b8 !important;}
+
+/* Tier 2 red — st.warning → EROAD Pomegranate */
+[data-testid="stNotificationContentWarning"] {
+    background: #fdf0ee !important;
+    border-left: 4px solid #ee3124 !important;
+    border-radius: 8px !important;
+}
+[data-testid="stNotificationContentWarning"] p,
+[data-testid="stNotificationContentWarning"] strong {color: #6b1610 !important;}
+[data-testid="stNotificationContentWarning"] svg {fill: #ee3124 !important;}
+
+/* Tier 3 green — st.success → EROAD value green */
+[data-testid="stNotificationContentSuccess"] {
+    background: #edf7f0 !important;
+    border-left: 4px solid #1a8c3f !important;
+    border-radius: 8px !important;
+}
+[data-testid="stNotificationContentSuccess"] p,
+[data-testid="stNotificationContentSuccess"] strong {color: #0e4d22 !important;}
+[data-testid="stNotificationContentSuccess"] code {background: #d1edda !important; color: #1a8c3f !important;}
+[data-testid="stNotificationContentSuccess"] svg {fill: #1a8c3f !important;}
 </style>
 """, unsafe_allow_html=True)
 
