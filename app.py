@@ -130,37 +130,37 @@ st.markdown("<div style='font-size:0.7rem; font-weight:700; letter-spacing:1.5px
 # Tier 1: DG Strategic Objectives — GRAY
 obj1, obj2, obj3 = st.columns(3)
 with obj1:
-    st.markdown("<div style='background:#6b7280; color:white; border-radius:8px; padding:12px 14px;'><strong>Profitable Sales Growth</strong><br><span style='font-size:0.8rem; opacity:0.85;'>Protect perishable revenue, reduce spoilage, grow DG Fresh</span><br><span style='font-family:JetBrains Mono,monospace; font-size:0.75rem; opacity:0.7;'>Target: 2-3% same-store comp</span></div>", unsafe_allow_html=True)
+    st.markdown("<div style='background:#6b7280; color:white; border-radius:8px; padding:12px 14px;'><strong>Profitable Sales Growth</strong></div>", unsafe_allow_html=True)
 with obj2:
-    st.markdown("<div style='background:#6b7280; color:white; border-radius:8px; padding:12px 14px;'><strong>Save to Serve</strong><br><span style='font-size:0.8rem; opacity:0.85;'>Cut fleet costs, eliminate manual waste, lower SG&A</span><br><span style='font-family:JetBrains Mono,monospace; font-size:0.75rem; opacity:0.7;'>Target: 6-7% operating margin</span></div>", unsafe_allow_html=True)
+    st.markdown("<div style='background:#6b7280; color:white; border-radius:8px; padding:12px 14px;'><strong>Save to Serve</strong></div>", unsafe_allow_html=True)
 with obj3:
-    st.markdown("<div style='background:#6b7280; color:white; border-radius:8px; padding:12px 14px;'><strong>Shrink Reduction</strong><br><span style='font-size:0.8rem; opacity:0.85;'>#1 margin tailwind — temp abuse is invisible cold chain shrink</span><br><span style='font-family:JetBrains Mono,monospace; font-size:0.75rem; opacity:0.7;'>90+ bps improvement Q3 FY25</span></div>", unsafe_allow_html=True)
+    st.markdown("<div style='background:#6b7280; color:white; border-radius:8px; padding:12px 14px;'><strong>Shrink Reduction</strong></div>", unsafe_allow_html=True)
 
 st.markdown("<div style='text-align:center; color:#aaa; font-size:1rem; margin:-4px 0 -4px 0;'>&#9660; &#9660; &#9660;</div>", unsafe_allow_html=True)
 
 # Tier 2: Operational Priorities — RED
 op1, op2, op3, op4 = st.columns(4)
 with op1:
-    st.markdown("<div style='background:#ee3124; color:white; border-radius:8px; padding:10px 12px;'><strong style='font-size:0.85rem;'>DG Fresh</strong><br><span style='font-size:0.78rem; opacity:0.85;'>19,000+ stores, 10 cold DCs. Orbcomm = blind spots.</span></div>", unsafe_allow_html=True)
+    st.markdown("<div style='background:#ee3124; color:white; border-radius:8px; padding:10px 12px;'><strong style='font-size:0.85rem;'>DG Fresh</strong></div>", unsafe_allow_html=True)
 with op2:
-    st.markdown("<div style='background:#ee3124; color:white; border-radius:8px; padding:10px 12px;'><strong style='font-size:0.85rem;'>OTIF</strong><br><span style='font-size:0.78rem; opacity:0.85;'>#1 supply chain priority. Rejected loads = failed OTIF.</span></div>", unsafe_allow_html=True)
+    st.markdown("<div style='background:#ee3124; color:white; border-radius:8px; padding:10px 12px;'><strong style='font-size:0.85rem;'>OTIF</strong></div>", unsafe_allow_html=True)
 with op3:
-    st.markdown("<div style='background:#ee3124; color:white; border-radius:8px; padding:10px 12px;'><strong style='font-size:0.85rem;'>Private Fleet</strong><br><span style='font-size:0.78rem; opacity:0.85;'>8,075 trailers. 20% savings vs 3PL at risk.</span></div>", unsafe_allow_html=True)
+    st.markdown("<div style='background:#ee3124; color:white; border-radius:8px; padding:10px 12px;'><strong style='font-size:0.85rem;'>Private Fleet</strong></div>", unsafe_allow_html=True)
 with op4:
-    st.markdown("<div style='background:#ee3124; color:white; border-radius:8px; padding:10px 12px;'><strong style='font-size:0.85rem;'>Food Safety</strong><br><span style='font-size:0.78rem; opacity:0.85;'>FDA recall July '25. FSMA 204 deadline.</span></div>", unsafe_allow_html=True)
+    st.markdown("<div style='background:#ee3124; color:white; border-radius:8px; padding:10px 12px;'><strong style='font-size:0.85rem;'>Food Safety</strong></div>", unsafe_allow_html=True)
 
 st.markdown("<div style='text-align:center; color:#aaa; font-size:1rem; margin:-4px 0 -4px 0;'>&#9660; &#9660; &#9660;</div>", unsafe_allow_html=True)
 
 # Tier 3: EROAD Value Drivers — BLACK
 vd1, vd2, vd3, vd4 = st.columns(4)
 with vd1:
-    st.markdown("<div style='background:#1a1a1a; color:white; border-radius:8px; padding:10px 12px;'><strong>Fuel Optimization</strong><br><span style='font-size:0.78rem; opacity:0.85;'>Pre-cool + op mode savings</span></div>", unsafe_allow_html=True)
+    st.markdown("<div style='background:#1a1a1a; color:white; border-radius:8px; padding:10px 12px;'><strong>Fuel Optimization</strong></div>", unsafe_allow_html=True)
 with vd2:
-    st.markdown("<div style='background:#1a1a1a; color:white; border-radius:8px; padding:10px 12px;'><strong>Rejected Loads</strong><br><span style='font-size:0.78rem; opacity:0.85;'>Predict excursions in transit</span></div>", unsafe_allow_html=True)
+    st.markdown("<div style='background:#1a1a1a; color:white; border-radius:8px; padding:10px 12px;'><strong>Rejected Loads</strong></div>", unsafe_allow_html=True)
 with vd3:
-    st.markdown("<div style='background:#1a1a1a; color:white; border-radius:8px; padding:10px 12px;'><strong>Probing Elimination</strong><br><span style='font-size:0.78rem; opacity:0.85;'>CoreTemp replaces thermometers</span></div>", unsafe_allow_html=True)
+    st.markdown("<div style='background:#1a1a1a; color:white; border-radius:8px; padding:10px 12px;'><strong>Probing Elimination</strong></div>", unsafe_allow_html=True)
 with vd4:
-    st.markdown("<div style='background:#1a1a1a; color:white; border-radius:8px; padding:10px 12px;'><strong>False Alarm Reduction</strong><br><span style='font-size:0.78rem; opacity:0.85;'>Core temp vs return air noise</span></div>", unsafe_allow_html=True)
+    st.markdown("<div style='background:#1a1a1a; color:white; border-radius:8px; padding:10px 12px;'><strong>False Alarm Reduction</strong></div>", unsafe_allow_html=True)
 
 
 # ─── Helpers ───
