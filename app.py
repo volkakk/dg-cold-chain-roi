@@ -58,6 +58,30 @@ st.markdown("""
 st.title("Cold Chain ROI Calculator")
 st.caption("EROAD Value Engineering — Discovery Call Tool")
 
+# ─── Value Story ───
+st.markdown("""
+<div style="background:#f5f6f8; border-left:4px solid #1869b8; border-radius:6px; padding:16px 20px; margin:12px 0 8px 0;">
+    <div style="font-weight:700; color:#1869b8; margin-bottom:6px; font-size:0.95rem;">The Dollar General Cold Chain Problem</div>
+    <div style="font-size:0.88rem; line-height:1.7; color:#444;">
+        DG moves perishables through <strong>~1,000 reefer trailers</strong> across one of the largest store networks in the U.S.
+        Today, Orbcomm monitors <strong>return air only</strong> — a sensor that spikes 15–20&deg;F every door open
+        even when product is fine. The result: hundreds of daily false alerts that FSQA learns to ignore,
+        real excursions that get missed, rejected loads that cost thousands each, and drivers
+        still probing product by hand at every stop.
+        <br><br>
+        EROAD <strong>CoreTemp</strong> replaces guesswork with physics — predicting actual product core temperature
+        using thermal mass modeling. That single shift eliminates false alarms, catches real excursions before
+        they become rejections, removes manual probing, and cuts reefer fuel waste.
+        <strong>Four value drivers, one platform.</strong>
+        <br><br>
+        <span style="color:#888; font-size:0.82rem;">
+            Context: July 2025 FDA Class II temperature recall at DG stores.
+            FSMA 204 traceability rules tightening in 2026.
+        </span>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
 
 # ─── Helpers ───
 def fmt(n):
