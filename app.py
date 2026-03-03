@@ -99,24 +99,64 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.title("Cold Chain ROI Calculator")
-st.caption("EROAD CoreTemp Value Assessment")
 
-# ─── Value Story ───
-st.markdown("""
-<div style="background:#f0f4f8; border-left:4px solid #1869b8; border-radius:6px; padding:18px 22px; margin:12px 0 16px 0;">
-    <div style="font-weight:700; color:#1869b8; font-size:1.05rem; margin-bottom:8px;">The Dollar General Cold Chain Opportunity</div>
+# ─── Persona selector ───
+persona = st.radio(
+    "Stakeholder view",
+    ["CFO / Finance", "VP Operations / Supply Chain", "FSQA / Quality"],
+    index=0, horizontal=True, label_visibility="collapsed",
+)
+
+# ─── Value Story (reframed by persona) ───
+if persona == "CFO / Finance":
+    headline = "Quantified Cold Chain Value"
+    lead = (
+        "Dollar General's DG Fresh initiative self-distributes perishables to <strong>19,000+ stores</strong> "
+        "through 10 cold DCs and an estimated <strong>1,000 reefer trailers</strong>. Current return-air-only "
+        "monitoring drives measurable financial waste: rejected loads averaging $8,000 each, manual probing "
+        "labor across hundreds of drivers, FSQA time spent investigating false alerts, and excess reefer fuel burn."
+    )
+    bridge = (
+        "EROAD <strong>CoreTemp</strong> addresses four quantifiable cost categories that roll directly into "
+        "DG's <strong>Save to Serve</strong> operating margin framework and <strong>shrink reduction</strong> targets. "
+        "The model below uses adjustable inputs &mdash; every number is transparent and auditable."
+    )
+elif persona == "VP Operations / Supply Chain":
+    headline = "Cold Chain Operational Impact"
+    lead = (
+        "DG Fresh moves perishables through <strong>1,000 reefer trailers</strong> and <strong>10 cold storage DCs</strong> "
+        "to 19,000+ stores. The current Orbcomm setup monitors return air only &mdash; a sensor that spikes "
+        "15&ndash;20&deg;F every door open even when product is fine. That creates hundreds of daily false alerts, "
+        "rejected loads that break OTIF, and drivers still probing product by hand at every stop."
+    )
+    bridge = (
+        "EROAD <strong>CoreTemp</strong> predicts actual product core temperature using thermal mass modeling. "
+        "The operational result: loads stay on schedule, drivers skip the thermometer, and your team focuses on "
+        "real exceptions instead of chasing noise. Four drivers quantified below &mdash; all tied to "
+        "<strong>OTIF</strong> and <strong>private fleet efficiency</strong>."
+    )
+else:
+    headline = "Cold Chain Compliance & Risk Reduction"
+    lead = (
+        "Dollar General's return-air monitoring generates hundreds of temperature alerts daily &mdash; "
+        "but <strong>70&ndash;90% are false positives</strong> triggered by door-open cycling, not actual product "
+        "excursions. FSQA teams learn to dismiss alerts. When a real excursion happens, it looks identical "
+        "to the noise. Loads get rejected at the dock. Or worse &mdash; they don't, and product reaches stores."
+    )
+    bridge = (
+        "EROAD <strong>CoreTemp</strong> predicts actual product core temperature, separating real risk from "
+        "return-air noise. Your team investigates <strong>fewer, higher-confidence alerts</strong> and has "
+        "audit-ready temperature records for every load. The model below quantifies false alarm reduction "
+        "and rejected load prevention &mdash; the two drivers that matter most for <strong>FSMA readiness</strong>."
+    )
+
+st.markdown(f"""
+<div style="background:#f0f4f8; border-left:4px solid #1869b8; border-radius:6px; padding:18px 22px; margin:8px 0 16px 0;">
+    <div style="font-weight:700; color:#1869b8; font-size:1.05rem; margin-bottom:8px;">{headline}</div>
     <div style="font-size:0.9rem; line-height:1.75; color:#333;">
-        Dollar General self-distributes perishables to <strong>19,000+ stores</strong> through 10 cold storage
-        distribution centers and an estimated <strong>1,000 reefer trailers</strong> as part of the DG Fresh initiative.
-        Current temperature monitoring relies on return-air sensors that spike 15&ndash;20&deg;F on every door open
-        &mdash; even when product temperature remains stable. This creates hundreds of false alerts daily,
-        masks real excursions, drives unnecessary load rejections, and requires manual product probing at every stop.
+        {lead}
         <br><br>
-        EROAD <strong>CoreTemp</strong> predicts actual product core temperature using thermal mass modeling &mdash;
-        monitoring what matters. The result: fewer rejected loads, eliminated manual probing,
-        reduced false alarms, and lower reefer fuel consumption. Four measurable value drivers
-        that directly support DG's stated priorities around <strong>shrink reduction</strong>,
-        <strong>OTIF improvement</strong>, and the <strong>Save to Serve</strong> operating margin framework.
+        {bridge}
     </div>
     <div style="margin-top:10px; font-size:0.8rem; color:#888;">
         July 2025 FDA Class II temperature recall at Dollar General stores &nbsp;|&nbsp; FSMA 204 traceability deadline ahead
@@ -253,12 +293,27 @@ payback = (investment / gross * 12) if gross > 0 else 0
 # ─── Dashboard ───
 st.divider()
 
-# Summary metrics
+# Summary metrics — reframed by persona
 col1, col2, col3, col4 = st.columns(4)
-col1.metric("Total Annual Value", fmt(gross))
-col2.metric("Net Value (after EROAD)", fmt(net))
-col3.metric("ROI", f"{roi:.1f}x")
-col4.metric("Payback", f"{payback:.1f} months")
+
+if persona == "CFO / Finance":
+    col1.metric("Total Annual Value", fmt(gross))
+    col2.metric("Net Value (after EROAD)", fmt(net))
+    col3.metric("ROI", f"{roi:.1f}x")
+    col4.metric("Payback", f"{payback:.1f} months")
+elif persona == "VP Operations / Supply Chain":
+    loads_prevented = rej_loads * (rej_rate / 100) * 12
+    probing_hrs_saved = prob_drv * prob_stp * (prob_min / 60) * prob_days * (prob_elim / 100)
+    col1.metric("Loads Protected / Year", f"{loads_prevented:,.0f}")
+    col2.metric("Probing Hours Eliminated", f"{probing_hrs_saved:,.0f}")
+    col3.metric("Total Operational Value", fmt(gross))
+    col4.metric("Payback", f"{payback:.1f} months")
+else:
+    alerts_eliminated = fa_alerts * (fa_rate / 100) * (fa_red / 100) * fa_days
+    col1.metric("False Alarms Eliminated / Year", f"{alerts_eliminated:,.0f}")
+    col2.metric("FSQA Hours Recovered", f"{alerts_eliminated * (fa_min / 60):,.0f}")
+    col3.metric("Rejected Loads Prevented", f"{rej_loads * (rej_rate / 100) * 12:,.0f}")
+    col4.metric("Compliance Value", fmt(fa_total + rej_total))
 
 st.divider()
 
