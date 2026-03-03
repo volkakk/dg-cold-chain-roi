@@ -62,46 +62,6 @@ button[data-testid="stBaseButton-headerNoPadding"] svg {
     stroke: white !important;
 }
 
-/* EROAD branded alert boxes */
-/* Tier 1 — st.info → EROAD Denim Blue */
-div[data-testid="stAlert"][data-baseweb-type="info"],
-div[role="alert"]:has(> svg[fill="rgba(23, 92, 211"]),
-.stAlert:has(> div > svg) {border-radius: 8px !important;}
-
-div[data-testid="stNotification"][aria-label*="info"],
-div.stAlert > div {border-radius: 8px !important;}
-
-/* Tier 1 blue */
-[data-testid="stNotificationContentInfo"] {
-    background: #edf3fb !important;
-    border-left: 4px solid #1869b8 !important;
-    border-radius: 8px !important;
-}
-[data-testid="stNotificationContentInfo"] p,
-[data-testid="stNotificationContentInfo"] strong {color: #0d3f6e !important;}
-[data-testid="stNotificationContentInfo"] code {background: #d4e3f5 !important; color: #1869b8 !important;}
-[data-testid="stNotificationContentInfo"] svg {fill: #1869b8 !important;}
-
-/* Tier 2 red — st.warning → EROAD Pomegranate */
-[data-testid="stNotificationContentWarning"] {
-    background: #fdf0ee !important;
-    border-left: 4px solid #ee3124 !important;
-    border-radius: 8px !important;
-}
-[data-testid="stNotificationContentWarning"] p,
-[data-testid="stNotificationContentWarning"] strong {color: #6b1610 !important;}
-[data-testid="stNotificationContentWarning"] svg {fill: #ee3124 !important;}
-
-/* Tier 3 green — st.success → EROAD value green */
-[data-testid="stNotificationContentSuccess"] {
-    background: #edf7f0 !important;
-    border-left: 4px solid #1a8c3f !important;
-    border-radius: 8px !important;
-}
-[data-testid="stNotificationContentSuccess"] p,
-[data-testid="stNotificationContentSuccess"] strong {color: #0e4d22 !important;}
-[data-testid="stNotificationContentSuccess"] code {background: #d1edda !important; color: #1a8c3f !important;}
-[data-testid="stNotificationContentSuccess"] svg {fill: #1a8c3f !important;}
 </style>
 """, unsafe_allow_html=True)
 
@@ -141,71 +101,64 @@ st.markdown("""
 st.title("Cold Chain ROI Calculator")
 st.caption("EROAD Value Engineering — Discovery Call Tool")
 
-# ─── Value Story ───
-st.markdown("""
-<div style="background:#f5f6f8; border-left:4px solid #1869b8; border-radius:6px; padding:16px 20px; margin:12px 0 8px 0;">
-    <div style="font-weight:700; color:#1869b8; margin-bottom:6px; font-size:0.95rem;">The Dollar General Cold Chain Problem</div>
-    <div style="font-size:0.88rem; line-height:1.7; color:#444;">
-        DG moves perishables through <strong>~1,000 reefer trailers</strong> across one of the largest store networks in the U.S.
-        Today, Orbcomm monitors <strong>return air only</strong> — a sensor that spikes 15–20&deg;F every door open
-        even when product is fine. The result: hundreds of daily false alerts that FSQA learns to ignore,
-        real excursions that get missed, rejected loads that cost thousands each, and drivers
-        still probing product by hand at every stop.
-        <br><br>
-        EROAD <strong>CoreTemp</strong> replaces guesswork with physics — predicting actual product core temperature
-        using thermal mass modeling. That single shift eliminates false alarms, catches real excursions before
-        they become rejections, removes manual probing, and cuts reefer fuel waste.
-        <strong>Four value drivers, one platform.</strong>
-        <br><br>
-        <span style="color:#888; font-size:0.82rem;">
-            Context: July 2025 FDA Class II temperature recall at DG stores.
-            FSMA 204 traceability rules tightening in 2026.
-        </span>
-    </div>
-</div>
-""", unsafe_allow_html=True)
+# ─── Discovery Call Guide ───
+st.markdown("<div style='background:#1869b8; color:white; border-radius:8px; padding:18px 22px; margin:12px 0 4px 0;'><strong style='font-size:1rem;'>Discovery Call Guide</strong><span style='float:right; font-size:0.78rem; opacity:0.7;'>Start broad, go narrow. Let them talk.</span></div>", unsafe_allow_html=True)
+
+# Executive context
+st.markdown("<div style='background:#f0f4f8; border-radius:0 0 8px 8px; padding:14px 22px; margin:0 0 6px 0; font-size:0.88rem; line-height:1.7; color:#333;'><strong>Context for this call:</strong> DG is in year two of their Back to Basics turnaround under Todd Vasos. They're chasing a 6-7% operating margin target, and shrink reduction is their #1 margin lever (90+ bps in Q3 FY25). Meanwhile, DG Fresh now self-distributes perishables to 19,000+ stores through 10 cold DCs and ~1,000 reefer trailers — but they're still on Orbcomm return-air-only monitoring. July 2025 FDA Class II temperature recall at DG stores. FSMA 204 deadline ahead.</div>", unsafe_allow_html=True)
+
+# Question flow
+q1, q2 = st.columns(2)
+with q1:
+    st.markdown("<div style='background:#edf3fb; border-left:3px solid #1869b8; border-radius:6px; padding:12px 16px; margin:4px 0; font-size:0.84rem;'><strong style='color:#1869b8;'>1. STRATEGIC (CFO / SVP Supply Chain)</strong><br><em style='color:#555;'>\"Where does cold chain fit in the Back to Basics priorities?\"</em><br><em style='color:#555;'>\"How is DG Fresh tracking against the operating margin framework?\"</em><br><em style='color:#555;'>\"What does shrink look like on the perishable side specifically?\"</em></div>", unsafe_allow_html=True)
+with q2:
+    st.markdown("<div style='background:#edf3fb; border-left:3px solid #1869b8; border-radius:6px; padding:12px 16px; margin:4px 0; font-size:0.84rem;'><strong style='color:#1869b8;'>2. OPERATIONAL (VP Transportation / FSQA)</strong><br><em style='color:#555;'>\"Walk me through what happens when a driver opens the door on a multi-stop route.\"</em><br><em style='color:#555;'>\"How many alerts is your FSQA team processing daily? What % are real?\"</em><br><em style='color:#555;'>\"What does a rejected load cost you end to end?\"</em></div>", unsafe_allow_html=True)
+
+q3, q4 = st.columns(2)
+with q3:
+    st.markdown("<div style='background:#fdf0ee; border-left:3px solid #ee3124; border-radius:6px; padding:12px 16px; margin:4px 0; font-size:0.84rem;'><strong style='color:#ee3124;'>3. PAIN (Uncover the cost of inaction)</strong><br><em style='color:#555;'>\"What happened after the July '25 recall? Did anything change internally?\"</em><br><em style='color:#555;'>\"If Orbcomm shows a spike, how does your team decide if it's real?\"</em><br><em style='color:#555;'>\"Are drivers still probing at every stop? How much time is that?\"</em></div>", unsafe_allow_html=True)
+with q4:
+    st.markdown("<div style='background:#edf7f0; border-left:3px solid #1a8c3f; border-radius:6px; padding:12px 16px; margin:4px 0; font-size:0.84rem;'><strong style='color:#1a8c3f;'>4. VALUE (Bridge to the numbers below)</strong><br><em style='color:#555;'>\"If you could know actual product temp — not air temp — what would that change?\"</em><br><em style='color:#555;'>\"What if you could cut false alarms by 70% and catch every real excursion?\"</em><br><em style='color:#555;'>\"Let me show you what that looks like in dollars...\"</em></div>", unsafe_allow_html=True)
+
+st.markdown("")
 
 # ─── Value Map ───
-st.subheader("Value Map")
-st.caption("DG Strategic Objectives (10-K) \u2192 Operational Priorities \u2192 EROAD Value Drivers")
+st.markdown("<div style='font-size:0.7rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#1869b8; margin-bottom:4px;'>VALUE MAP: DG OBJECTIVES &rarr; OPERATIONAL PRIORITIES &rarr; EROAD DRIVERS</div>", unsafe_allow_html=True)
 
 # Tier 1: DG Strategic Objectives
-st.markdown("**DG Strategic Objectives** *(FY2024 10-K / Earnings)*")
 obj1, obj2, obj3 = st.columns(3)
 with obj1:
-    st.info("**Driving Profitable Sales Growth**\n\nProtect perishable revenue, reduce spoilage losses, improve DG Fresh availability\n\n`Target: 2-3% same-store comp`")
+    st.markdown("<div style='background:#1869b8; color:white; border-radius:8px; padding:12px 14px;'><strong>Profitable Sales Growth</strong><br><span style='font-size:0.8rem; opacity:0.85;'>Protect perishable revenue, reduce spoilage, grow DG Fresh</span><br><span style='font-family:JetBrains Mono,monospace; font-size:0.75rem; opacity:0.7;'>Target: 2-3% same-store comp</span></div>", unsafe_allow_html=True)
 with obj2:
-    st.info("**Low-Cost Operator / Save to Serve**\n\nReduce fleet operating costs, eliminate manual labor waste, lower SG&A burden\n\n`Target: 6-7% operating margin`")
+    st.markdown("<div style='background:#1869b8; color:white; border-radius:8px; padding:12px 14px;'><strong>Save to Serve</strong><br><span style='font-size:0.8rem; opacity:0.85;'>Cut fleet costs, eliminate manual waste, lower SG&A</span><br><span style='font-family:JetBrains Mono,monospace; font-size:0.75rem; opacity:0.7;'>Target: 6-7% operating margin</span></div>", unsafe_allow_html=True)
 with obj3:
-    st.info("**Shrink Reduction**\n\n\\#1 margin tailwind -- temperature abuse is invisible shrink in cold chain\n\n`90+ bps improvement (Q3 FY25)`")
+    st.markdown("<div style='background:#1869b8; color:white; border-radius:8px; padding:12px 14px;'><strong>Shrink Reduction</strong><br><span style='font-size:0.8rem; opacity:0.85;'>#1 margin tailwind — temp abuse is invisible cold chain shrink</span><br><span style='font-family:JetBrains Mono,monospace; font-size:0.75rem; opacity:0.7;'>90+ bps improvement Q3 FY25</span></div>", unsafe_allow_html=True)
 
-st.markdown("<div style='text-align:center; color:#bbb; font-size:1.2rem; margin:-8px 0 -4px 0;'>\u25be \u25be \u25be</div>", unsafe_allow_html=True)
+st.markdown("<div style='text-align:center; color:#1869b8; font-size:1rem; margin:-4px 0 -4px 0;'>&#9660; &#9660; &#9660;</div>", unsafe_allow_html=True)
 
-# Tier 2: DG Operational Priorities
-st.markdown("**DG Operational Priorities** *(Cold Chain Impact)*")
+# Tier 2: Operational Priorities
 op1, op2, op3, op4 = st.columns(4)
 with op1:
-    st.warning("**DG Fresh Self-Distribution**\n\nPerishables to 19,000+ stores via 10 cold DCs. Orbcomm return-air creates blind spots.")
+    st.markdown("<div style='background:white; border:2px solid #ee3124; border-radius:8px; padding:10px 12px;'><strong style='color:#ee3124; font-size:0.85rem;'>DG Fresh</strong><br><span style='font-size:0.78rem; color:#555;'>19,000+ stores, 10 cold DCs. Orbcomm = blind spots.</span></div>", unsafe_allow_html=True)
 with op2:
-    st.warning("**OTIF Improvement**\n\n\\#1 supply chain priority. Rejected loads = failed OTIF. +470 bps on-time so far.")
+    st.markdown("<div style='background:white; border:2px solid #ee3124; border-radius:8px; padding:10px 12px;'><strong style='color:#ee3124; font-size:0.85rem;'>OTIF</strong><br><span style='font-size:0.78rem; color:#555;'>#1 supply chain priority. Rejected loads = failed OTIF.</span></div>", unsafe_allow_html=True)
 with op3:
-    st.warning("**Private Fleet Efficiency**\n\n2,412 tractors, 8,075 trailers. 20% savings vs 3PL. Reefer fuel is controllable.")
+    st.markdown("<div style='background:white; border:2px solid #ee3124; border-radius:8px; padding:10px 12px;'><strong style='color:#ee3124; font-size:0.85rem;'>Private Fleet</strong><br><span style='font-size:0.78rem; color:#555;'>8,075 trailers. 20% savings vs 3PL at risk.</span></div>", unsafe_allow_html=True)
 with op4:
-    st.warning("**FSMA / Food Safety**\n\nFDA Class II recall (July '25). FSMA 204 deadline ahead. Audit-ready records required.")
+    st.markdown("<div style='background:white; border:2px solid #ee3124; border-radius:8px; padding:10px 12px;'><strong style='color:#ee3124; font-size:0.85rem;'>Food Safety</strong><br><span style='font-size:0.78rem; color:#555;'>FDA recall July '25. FSMA 204 deadline.</span></div>", unsafe_allow_html=True)
 
-st.markdown("<div style='text-align:center; color:#bbb; font-size:1.2rem; margin:-8px 0 -4px 0;'>\u25be \u25be \u25be</div>", unsafe_allow_html=True)
+st.markdown("<div style='text-align:center; color:#1a8c3f; font-size:1rem; margin:-4px 0 -4px 0;'>&#9660; &#9660; &#9660;</div>", unsafe_allow_html=True)
 
 # Tier 3: EROAD Value Drivers
-st.markdown("**EROAD CoreTemp Value Drivers** *(Quantified Below)*")
 vd1, vd2, vd3, vd4 = st.columns(4)
 with vd1:
-    st.success("**Fuel Optimization**\n\nSmarter pre-cool + op mode = less diesel burn per trailer per day\n\n`Save to Serve`")
+    st.markdown("<div style='background:#1a8c3f; color:white; border-radius:8px; padding:10px 12px;'><strong>Fuel Optimization</strong><br><span style='font-size:0.78rem; opacity:0.85;'>Pre-cool + op mode savings</span></div>", unsafe_allow_html=True)
 with vd2:
-    st.success("**Rejected Load Prevention**\n\nPredict excursions before delivery -- fix in transit, not at the dock\n\n`Shrink` `OTIF`")
+    st.markdown("<div style='background:#1a8c3f; color:white; border-radius:8px; padding:10px 12px;'><strong>Rejected Loads</strong><br><span style='font-size:0.78rem; opacity:0.85;'>Predict excursions in transit</span></div>", unsafe_allow_html=True)
 with vd3:
-    st.success("**Probing Elimination**\n\nCoreTemp replaces handheld thermometers -- driver time back to driving\n\n`SG&A` `Fleet Efficiency`")
+    st.markdown("<div style='background:#1a8c3f; color:white; border-radius:8px; padding:10px 12px;'><strong>Probing Elimination</strong><br><span style='font-size:0.78rem; opacity:0.85;'>CoreTemp replaces thermometers</span></div>", unsafe_allow_html=True)
 with vd4:
-    st.success("**False Alarm Reduction**\n\nCore temp vs return air -- FSQA focuses on real risk, not noise\n\n`Shrink` `Compliance`")
+    st.markdown("<div style='background:#1a8c3f; color:white; border-radius:8px; padding:10px 12px;'><strong>False Alarm Reduction</strong><br><span style='font-size:0.78rem; opacity:0.85;'>Core temp vs return air noise</span></div>", unsafe_allow_html=True)
 
 
 # ─── Helpers ───
