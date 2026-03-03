@@ -7,6 +7,33 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
+# ─── Password Gate ───
+def check_password():
+    """Simple password gate. Set password in .streamlit/secrets.toml or Streamlit Cloud secrets."""
+    correct = st.secrets.get("password", "eroad2026")
+
+    if "authenticated" not in st.session_state:
+        st.session_state.authenticated = False
+
+    if st.session_state.authenticated:
+        return True
+
+    st.markdown("<div style='max-width:400px; margin:80px auto;'>", unsafe_allow_html=True)
+    st.image("https://www.eroad.com/wp-content/uploads/2025/10/EROAD_LogoWithWordmark_RGB.png", width=180)
+    st.markdown("#### Cold Chain ROI Calculator")
+    pwd = st.text_input("Password", type="password", placeholder="Enter access password")
+    if pwd:
+        if pwd == correct:
+            st.session_state.authenticated = True
+            st.rerun()
+        else:
+            st.error("Incorrect password.")
+    st.markdown("</div>", unsafe_allow_html=True)
+    return False
+
+if not check_password():
+    st.stop()
+
 # Minimal CSS — just EROAD branding + cleanup
 st.markdown("""
 <style>
@@ -23,9 +50,8 @@ st.markdown("""
 <div style="display:flex; align-items:center; gap:20px; margin-bottom:6px;">
     <img src="https://www.eroad.com/wp-content/uploads/2025/10/EROAD_LogoWithWordmark_RGB.png"
          height="36" onerror="this.outerHTML='<span style=color:#1869b8;font-weight:800;font-size:1.4rem>EROAD</span>'" />
-    <span style="color:#ccc; font-size:1.4rem; font-weight:300;">&times;</span>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Dollar_General_logo.svg/200px-Dollar_General_logo.svg.png"
-         height="32" onerror="this.outerHTML='<span style=color:#FFC220;font-weight:800;font-size:1.2rem;background:#000;padding:2px+8px;border-radius:4px>DOLLAR GENERAL</span>'" />
+    <span style="color:#bbb; font-size:1.4rem; font-weight:300;">&times;</span>
+    <span style="background:#000; color:#FFC220; font-weight:800; font-size:1.05rem; padding:4px 12px; border-radius:4px; letter-spacing:1px;">DOLLAR GENERAL</span>
 </div>
 """, unsafe_allow_html=True)
 
