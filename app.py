@@ -130,37 +130,37 @@ st.markdown("<div style='font-size:0.7rem; font-weight:700; letter-spacing:1.5px
 # Tier 1: DG Strategic Objectives — GRAY
 obj1, obj2, obj3 = st.columns(3)
 with obj1:
-    st.markdown("<div style='background:#6b7280; color:white; border-radius:8px; padding:12px 14px;'><strong>Profitable Sales Growth</strong></div>", unsafe_allow_html=True)
+    st.markdown("<div style='background:#6b7280; color:white; border-radius:8px; padding:12px 14px; text-align:center;'><strong>Profitable Sales Growth</strong></div>", unsafe_allow_html=True)
 with obj2:
-    st.markdown("<div style='background:#6b7280; color:white; border-radius:8px; padding:12px 14px;'><strong>Save to Serve</strong></div>", unsafe_allow_html=True)
+    st.markdown("<div style='background:#6b7280; color:white; border-radius:8px; padding:12px 14px; text-align:center;'><strong>Save to Serve</strong></div>", unsafe_allow_html=True)
 with obj3:
-    st.markdown("<div style='background:#6b7280; color:white; border-radius:8px; padding:12px 14px;'><strong>Shrink Reduction</strong></div>", unsafe_allow_html=True)
+    st.markdown("<div style='background:#6b7280; color:white; border-radius:8px; padding:12px 14px; text-align:center;'><strong>Shrink Reduction</strong></div>", unsafe_allow_html=True)
 
 st.markdown("<div style='text-align:center; color:#aaa; font-size:1rem; margin:-4px 0 -4px 0;'>&#9660; &#9660; &#9660;</div>", unsafe_allow_html=True)
 
 # Tier 2: Operational Priorities — RED
 op1, op2, op3, op4 = st.columns(4)
 with op1:
-    st.markdown("<div style='background:#ee3124; color:white; border-radius:8px; padding:10px 12px;'><strong style='font-size:0.85rem;'>DG Fresh</strong></div>", unsafe_allow_html=True)
+    st.markdown("<div style='background:#ee3124; color:white; border-radius:8px; padding:10px 12px; text-align:center;'><strong style='font-size:0.85rem;'>DG Fresh</strong></div>", unsafe_allow_html=True)
 with op2:
-    st.markdown("<div style='background:#ee3124; color:white; border-radius:8px; padding:10px 12px;'><strong style='font-size:0.85rem;'>OTIF</strong></div>", unsafe_allow_html=True)
+    st.markdown("<div style='background:#ee3124; color:white; border-radius:8px; padding:10px 12px; text-align:center;'><strong style='font-size:0.85rem;'>OTIF</strong></div>", unsafe_allow_html=True)
 with op3:
-    st.markdown("<div style='background:#ee3124; color:white; border-radius:8px; padding:10px 12px;'><strong style='font-size:0.85rem;'>Private Fleet</strong></div>", unsafe_allow_html=True)
+    st.markdown("<div style='background:#ee3124; color:white; border-radius:8px; padding:10px 12px; text-align:center;'><strong style='font-size:0.85rem;'>Private Fleet</strong></div>", unsafe_allow_html=True)
 with op4:
-    st.markdown("<div style='background:#ee3124; color:white; border-radius:8px; padding:10px 12px;'><strong style='font-size:0.85rem;'>Food Safety</strong></div>", unsafe_allow_html=True)
+    st.markdown("<div style='background:#ee3124; color:white; border-radius:8px; padding:10px 12px; text-align:center;'><strong style='font-size:0.85rem;'>Food Safety</strong></div>", unsafe_allow_html=True)
 
 st.markdown("<div style='text-align:center; color:#aaa; font-size:1rem; margin:-4px 0 -4px 0;'>&#9660; &#9660; &#9660;</div>", unsafe_allow_html=True)
 
 # Tier 3: EROAD Value Drivers — BLACK
 vd1, vd2, vd3, vd4 = st.columns(4)
 with vd1:
-    st.markdown("<div style='background:#1a1a1a; color:white; border-radius:8px; padding:10px 12px;'><strong>Fuel Optimization</strong></div>", unsafe_allow_html=True)
+    st.markdown("<div style='background:#1a1a1a; color:white; border-radius:8px; padding:10px 12px; text-align:center;'><strong>Fuel Optimization</strong></div>", unsafe_allow_html=True)
 with vd2:
-    st.markdown("<div style='background:#1a1a1a; color:white; border-radius:8px; padding:10px 12px;'><strong>Rejected Loads</strong></div>", unsafe_allow_html=True)
+    st.markdown("<div style='background:#1a1a1a; color:white; border-radius:8px; padding:10px 12px; text-align:center;'><strong>Rejected Loads</strong></div>", unsafe_allow_html=True)
 with vd3:
-    st.markdown("<div style='background:#1a1a1a; color:white; border-radius:8px; padding:10px 12px;'><strong>Probing Elimination</strong></div>", unsafe_allow_html=True)
+    st.markdown("<div style='background:#1a1a1a; color:white; border-radius:8px; padding:10px 12px; text-align:center;'><strong>Probing Elimination</strong></div>", unsafe_allow_html=True)
 with vd4:
-    st.markdown("<div style='background:#1a1a1a; color:white; border-radius:8px; padding:10px 12px;'><strong>False Alarm Reduction</strong></div>", unsafe_allow_html=True)
+    st.markdown("<div style='background:#1a1a1a; color:white; border-radius:8px; padding:10px 12px; text-align:center;'><strong>False Alarm Reduction</strong></div>", unsafe_allow_html=True)
 
 
 # ─── Helpers ───
